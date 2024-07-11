@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: #36EBB0;
+}
+
+body {
+    background-color: #051944;
+    align-items: center;
+    width: 100%;
+}
+
+header {
+    background-color: #05194457;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+header .contents {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header .logo {
+    margin-right: auto;
+}
+
+header .logo i {
+    font-size: 50px;
+}
+
+header .pages {
+    text-align: center;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+}
+
+header li {
+    display: inline-block;
+    margin: auto 20px;
+    
+}
+
+header li a {
+    text-decoration: none;
+}
+
+header li a:hover {
+    text-decoration: underline;
+}
+
+header .mode {
+    margin-left: auto;
+}
+
+header .dark,
+.light {
+    cursor: pointer;
+}
+
+header .dark i,
+.light i {
+    font-size: 24px;
+}
+
+header .dark i:hover{
+    color: #41B06E;
+}
+
+header .dark {
+    display: none;
+}
+
+.home {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 10px;
+}
+
+.home .text {
+    margin-right: 100px;
+}
+
+.home .text h1 {
+    font-size: 80px;
+}
+
+.home .img img{
+    height: 500px;
+    width: auto;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 70px 0px;
+}
+
+.card {
+    width: 350px;
+    background-color: #FEF4DF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.card img {
+    width: 350px;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px 20px;
+}
+
+.card-content h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.card-content h3,
+.card-content p {
+    color: #051944;
+}
+
+.card-content a {
+    text-decoration: none;
+    background-color: #051944;
+    border-radius: 12px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+}
+
+.card-content a:hover {
+    background-color: #36EBB0;
+    color: #051944;
+}
+
+.about {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+}
+
+.about .pic img {
+    width: 300px;
+}
