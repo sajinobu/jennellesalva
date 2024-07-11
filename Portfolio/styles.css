@@ -5,20 +5,22 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    color: #36EBB0;
+    color: #00FF90;
 }
 
 body {
-    background-color: #222222;
+    background-color: #2E2E2E;
     align-items: center;
     width: 100%;
 }
 
 header {
-    background-color: #22222265;
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 99;
+    background-color: #2e2e2e3a;
+    backdrop-filter: blur(15px);
 }
 
 header .contents {
@@ -85,11 +87,11 @@ header .dark {
 
 .home {
     width: 80%;
-    margin: 80px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 30px;
 }
 
 .home .text {
