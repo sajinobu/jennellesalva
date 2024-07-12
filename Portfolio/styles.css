@@ -89,22 +89,111 @@ header .dark {
     width: 80%;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 70px;
 }
 
 .home .text {
-    margin-right: 100px;
+    margin-right: 20px;
 }
 
 .home .text h1 {
-    font-size: 80px;
+    font-size: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.home .text h1 .arrow {
+    color: #F86663;
+    margin-right: 13px;
+}
+
+.home .text .my-links {
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.home .text .my-links .btn {
+    display: inline-block;
+    color: #2E2E2E;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #00FF90;
+    border-radius: 12px;
+    text-align: center;
+    margin-right: 15px;
+    transition: 0.2s ease;
+}
+
+.home .text .my-links .btn:hover {
+    transform: scale(1.1);
+}
+
+.home .text .my-links a i {
+    font-size: 40px;
+    padding: 5px;
+    color: #F86663;
+    transition: 0.2s ease;
+}
+
+.home .text .my-links a i:hover {
+    transform: scale(1.15);
 }
 
 .home .img img{
     height: 500px;
     width: auto;
+}
+
+.about {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px auto;
+    padding: 70px;
+}
+
+.about .photo {
+    margin: auto 50px;
+    
+}
+
+.tint {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.tint img {
+    width: 300px;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.tint::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00ff9157;
+    transition: background-color 0.5s ease;
+    border-radius: 20px;
+}
+
+.tint:hover::before {
+    background-color: #ffffff00;
+}
+
+.about .about-me-text {
+    margin: auto 50px;
 }
 
 .card-container {
@@ -161,16 +250,4 @@ header .dark {
 .card-content a:hover {
     background-color: #36EBB0;
     color: #051944;
-}
-
-.about {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 100px auto;
-}
-
-.about .pic img {
-    width: 300px;
 }
