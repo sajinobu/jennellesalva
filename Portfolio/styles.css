@@ -151,14 +151,23 @@ header .dark {
 
 .about {
     width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 100px auto;
+    justify-content: center;
+    align-items: center;
     padding: 70px;
 }
 
-.about .photo {
+.about h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-content .photo {
     margin: auto 50px;
     
 }
@@ -192,7 +201,7 @@ header .dark {
     background-color: #ffffff00;
 }
 
-.about .about-me-text {
+.about-content .about-me-text {
     margin: auto 50px;
 }
 

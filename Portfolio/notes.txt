@@ -14,3 +14,23 @@ UPDATED LAYOUT:
     ABOUT
     WORKS
     OTHERS **TEMPORARY
+
+Have an aesthetic. Doesn't have to be wild. Simple is fine. But work with it. Focus on keeping things refined and simple because people get caught up too much in the bells and whistles. Folks screw up margin/padding and placement stuff ALL THE TIME, so don't. And make sure it's mobile friendly.
+
+Tell me about yourself, equally professionally and personally. Add a photo, smile. Give me an impression of yourself as a person so I'd want to even talk to you for 5 minutes.
+
+List skills and tech, list projects and detail the tech used in them, provide github and live project links.
+
+Provide all the basic, overall detail on a single page that's not too long. Perhaps make other pages with links to go into them. For example, a project section with one image, description, and tech used--with three buttons, Github, Live Site, and Learn More. The Learn More button would be a separate page explaining the project in greater detail. But you can leverage the Github readme for this as well, and keep everything single page.
+
+Provide LinkedIn (or whatever is popular in your area), Github, email, and resume on your portfolio as a contact section, maybe sidebar, and in your menu. Resume should a link to a Google drive PDF, not a download button.
+
+Overall, try to make an impression on someone. Make them want to have a chat with you.
+
+https://www.shiyunlu.com/
+https://bruno-simon.com/
+https://www.zachjordan.io/#top
+https://robbowen.digital/
+https://www.aayush65.com/
+https://yuta-abe.com/
+https://www.yeahimjt.me/
