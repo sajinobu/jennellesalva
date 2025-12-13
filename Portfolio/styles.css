@@ -1,11 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-/* --- 1. CSS Variables & Theme Setup --- */
 :root {
-    /* Fonts */
     --font-main: "Poppins", sans-serif;
 
-    /* Light Mode Palette (Default) */
     --bg-primary: #F5EAEA;
     --bg-card: #FFFFFF;
     --bg-input: #FFFFFF;
@@ -15,7 +12,7 @@
     
     --accent: #74B985;
     --accent-hover: #68A87A;
-    --accent-text: #FFFFFF; /* Text on top of accent buttons */
+    --accent-text: #FFFFFF;
     
     --divider: #E8E0E0;
     --border-subtle: rgba(104, 109, 118, 0.15);
@@ -24,8 +21,7 @@
 }
 
 [data-theme="dark"] {
-    /* Dark Mode Palette */
-    --bg-primary: #2B2B2B; /* Derived from #4D4646 */
+    --bg-primary: #2B2B2B;
     --bg-card: #383838;
     --bg-input: #383838;
     
@@ -33,10 +29,9 @@
     --text-secondary: #D3CFCF;
     --text-muted: rgba(245, 234, 234, 0.6);
     
-    /* Accent remains the same, consistent brand identity */
     --accent: #74B985;
     --accent-hover: #68A87A;
-    --accent-text: #2B2B2B; /* Dark text for contrast on green button */
+    --accent-text: #2B2B2B;
     
     --divider: #444444;
     --border-subtle: rgba(245, 234, 234, 0.08);
@@ -44,7 +39,6 @@
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* --- 2. Global Resets --- */
 * {
     margin: 0;
     padding: 0;
@@ -73,13 +67,12 @@ img {
     display: block;
 }
 
-/* --- 3. Header --- */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: var(--bg-primary); /* Or use a semi-transparent variable if preferred */
+    background-color: var(--bg-primary);
     border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -108,7 +101,7 @@ header .contents {
     font-size: 15px;
     color: var(--text-secondary);
     font-weight: 500;
-    transition: 0.2s;
+    transition: color 0.3s ease;
 }
 
 .pages a:hover, .pages a.active {
@@ -126,7 +119,6 @@ header .contents {
     color: var(--accent);
 }
 
-/* --- 4. Layout & Typography --- */
 section {
     padding: 80px 0;
     width: 90%;
@@ -152,7 +144,6 @@ section {
     border-radius: 2px;
 }
 
-/* --- 5. Buttons --- */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -183,13 +174,12 @@ section {
     color: var(--accent);
 }
 
-/* --- 6. Home / Hero --- */
 .home {
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 80px; /* Offset for fixed header */
+    padding-top: 80px;
 }
 
 .home .text {
@@ -244,7 +234,7 @@ section {
     width: 350px;
     height: 350px;
     background-color: var(--border-subtle);
-    border-radius: 50%; /* Circle shape */
+    border-radius: 50%;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -257,8 +247,10 @@ section {
     object-fit: cover;
 }
 
-/* --- 7. About & Certifications --- */
-/* --- Certifications Visual Grid --- */
+.about-text p {
+    text-align: center;    
+}
+
 .certifications-container {
     margin-top: 60px;
     width: 100%;
@@ -268,12 +260,11 @@ section {
     color: var(--text-primary);
     margin-bottom: 25px;
     font-size: 24px;
-    text-align: center; /* Center the title */
+    text-align: center;
 }
 
 .cert-grid {
     display: grid;
-    /* This creates a responsive grid that fits as many as possible */
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
     gap: 20px;
 }
@@ -294,7 +285,7 @@ section {
 
 .cert-img {
     width: 100%;
-    height: 140px; /* Fixed height to keep them uniform */
+    height: 140px;
     background-color: var(--border-subtle);
     overflow: hidden;
     position: relative;
@@ -303,7 +294,7 @@ section {
 .cert-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers area without stretching */
+    object-fit: cover;
     opacity: 0.9;
     transition: opacity 0.3s;
 }
@@ -345,26 +336,19 @@ section {
     text-decoration: underline;
 }
 
-/* Dark mode adjustment purely for images if they are white screenshots */
 [data-theme="dark"] .cert-img img {
-    filter: brightness(0.9); /* Slightly dim bright certificates in dark mode */
+    filter: brightness(0.9);
 }
 
-/* --- 8. Skills --- */
-/* --- Skills Section Styles --- */
-
-/* 1. Category Titles */
 .skill-category-title {
     font-size: 1.2rem;
     
-    /* ADAPTS: Uses your main text color (Dark Grey in Light mode, White in Dark mode) */
     color: var(--text-primary); 
     
     margin: 2rem 0 1rem 0;
     text-align: center;
 }
 
-/* 2. Container */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -374,20 +358,11 @@ section {
     margin: 0 auto 2rem auto;
 }
 
-/* 3. The Skill Card */
 .skill-card {
     width: 140px; 
-    
-    /* ADAPTS: Uses your card background (White in Light mode, Dark Grey in Dark mode) */
     background: var(--bg-card); 
-    
-    /* ADAPTS: Uses your subtle border variable */
     border: 1px solid var(--border-subtle);
-    
-    /* ADAPTS: Text color matches the theme */
     color: var(--text-primary);
-    
-    /* ADAPTS: Uses your shadow variable */
     box-shadow: var(--shadow);
     
     border-radius: 8px;
@@ -401,36 +376,25 @@ section {
     gap: 0.5rem;
 }
 
-/* 4. Icons (Font-based like generic HTML/CSS icons) */
 .skill-card i {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    
-    /* ADAPTS: Inherits the text color so icons are dark in light mode, light in dark mode */
     color: var(--text-primary);
 }
 
-/* 5. Images (Kotlin / Android Studio) */
 .skill-card img {
     width: 40px;
     height: 40px;
     margin-bottom: 0.5rem;
-    /* No filter needed; keeping original brand colors looks best */
     filter: grayscale(100%) brightness(200%);
 }
 
-/* 6. Hover Effect */
 .skill-card:hover {
-    /* ADAPTS: Uses your accent color for the border on hover */
     border-color: var(--accent);
-    
     transform: translateY(-5px);
-    
-    /* Optional: Make shadow slightly stronger on hover */
     box-shadow: 0 8px 24px rgba(0,0,0,0.15); 
 }
 
-/* --- 9. Projects (Cards) --- */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -459,7 +423,7 @@ section {
 .placeholder-img {
     width: 100%;
     height: 100%;
-    background-color: #ddd; /* simple grey block if no image */
+    background-color: #ddd;
     opacity: 0.1;
 }
 
@@ -521,7 +485,65 @@ section {
     color: var(--accent-text);
 }
 
-/* --- 10. Footer --- */
+.contact-text {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.big-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+.email-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.email-link {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.email-link:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.contact-socials {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.contact-socials a i {
+    font-size: 2rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contact-socials a:hover i {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
 footer {
     padding: 40px 0;
     text-align: center;
@@ -537,7 +559,6 @@ footer {
     gap: 15px;
 }
 
-/* --- Responsive --- */
 @media (max-width: 768px) {
     .home {
         flex-direction: column-reverse;
@@ -556,6 +577,6 @@ footer {
     }
 
     .pages {
-        display: none; /* In a real project, add a hamburger menu here */
+        display: none;
     }
 }
