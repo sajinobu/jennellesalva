@@ -1,150 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennelle Salva | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Jennelle Salva</title>
 </head>
 <body>
+
     <header>
         <div class="contents">
             <div class="logo">
-                <i class="fa-brands fa-blogger"></i>
+                <a href="#">JS.</a>
             </div>
-            <div class="pages">
+            <nav class="pages">
                 <ul>
-                    <li><a href="#Home">home</a></li>
-                    <li><a href="#About">about</a></li>
-                    <li><a href="#Skills">skills</a></li>
-                    <li><a href="#Works">works</a></li>
+                    <li><a href="#Home" class="active">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#Works">Projects</a></li>
+                    <li><a href="#Contact">Contact</a></li>
                 </ul>
+            </nav>
+            <div class="mode-toggle" id="theme-toggle">
+                <i class='bx bx-moon'></i>
             </div>
         </div>
     </header>
+
     <main>
-        <div class="home" id="Home">
+        <section class="home" id="Home">
             <div class="text">
-                <h1><div class="arrow">>></div>Jennelle Salva</h1>
-                <!--<p>Web & Software Developer</p>-->
-                <div class="my-links">
-                    <h2><a href="" class="btn">View CV</a></h2>
-                    <!--LinkedIn-->
-                    <a href=""><i class='bx bxl-linkedin'></i></a>
-                    <!--GitHub-->
-                    <a href=""><i class='bx bxl-github' ></i></a>
-                    <!--Instagram-->
-                    <a href=""><i class='bx bxl-instagram' ></i></a>
-                    <!--Facebook-->
-                    <a href=""><i class='bx bxl-facebook' ></i></a>
+                <span class="greeting">Hello, I'm</span>
+                <h1>Jennelle Salva</h1>
+                <p class="subtitle">Web & Software Developer</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-github' ></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                </div>
+
+                <div class="cta-group">
+                    <a href="#Contact" class="btn primary-btn">Contact Me</a>
+                    <a href="#" class="btn secondary-btn">Download CV</a>
                 </div>
             </div>
-            <div class="img">
-                <img src="img/img1.2.png" alt="">
+            
+            <div class="hero-img">
+                <div class="img-box">
+                    <img src="img/me.png" alt="Jennelle Salva">
+                </div>
             </div>
-        </div>
-        <div class="about" id="About">
-            <h2>About Me</h2>
+        </section>
+
+        <section class="section" id="About">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
             <div class="about-content">
-                <div class="photo">
-                    <figure class="tint">
-                        <img src="img/me.png" alt="">
-                    </figure>
-                    <figure class="shape">
-    
-                    </figure>
-                </div>
-                <div class="about-me-text">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur fugit maxime pariatur dolore a id cupiditate distinctio possimus quisquam ex aperiam neque impedit ullam repellendus, temporibus, in minus blanditiis enim.</p><br> <!--BR TEMPORARY-->
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur fugit maxime pariatur dolore a id cupiditate distinctio possimus quisquam ex aperiam neque impedit ullam repellendus, temporibus, in minus blanditiis enim.</p><br>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur fugit maxime pariatur dolore a id cupiditate distinctio possimus quisquam ex aperiam neque impedit ullam repellendus, temporibus, in minus blanditiis enim.</p><br>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur fugit maxime pariatur dolore a id cupiditate distinctio possimus quisquam ex aperiam neque impedit ullam repellendus, temporibus, in minus blanditiis enim.</p><br>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur fugit maxime pariatur dolore a id cupiditate distinctio possimus quisquam ex aperiam neque impedit ullam repellendus, temporibus, in minus blanditiis enim.</p><br>
+                <div class="about-text">
+                    <p>
+                        <strong>I am a passionate developer</strong> focused on creating clean, user-friendly experiences. 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur fugit maxime pariatur dolore a 
+                        id cupiditate distinctio possimus quisquam ex aperiam neque impedit ullam repellendus.
+                    </p>
+                    <br>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, gaming, or designing UI concepts.
+                    </p>
+                    
+                    <div class="certifications-container">
+                        <h3>Certifications</h3>
+                        
+                        <div class="cert-grid">
+                            <div class="cert-card">
+                                <div class="cert-img">
+                                    <img src="img/cert/JSE1_Cert.jpg" alt="JavaScript Essentials 1"> 
+                                </div>
+                                <div class="cert-info">
+                                    <h4>JavaScript Essentials 1</h4>
+                                    <p>Cisco Networking Academy | 2025</p>
+                                    <a href="#" class="view-cert">View Credential <i class='bx bx-link-external'></i></a>
+                                </div>
+                            </div>
+
+                            <div class="cert-card">
+                                <div class="cert-img">
+                                    <img src="img/cert/OPS_Cert.jpg" alt="Operating Systems">
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Operating Systems</h4>
+                                    <p>Cisco Networking Academy | 2025</p>
+                                    <a href="#" class="view-cert">View Credential <i class='bx bx-link-external'></i></a>
+                                </div>
+                            </div>
+
+                            <div class="cert-card">
+                                <div class="cert-img">
+                                    <img src="img/cert/PCAP_Cert.jpg" alt="Programming Essentials in Python">
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Programming Essentials in Python</h4>
+                                    <p>Cisco Networking Academy | 2023</p>
+                                    <a href="#" class="view-cert">View Credential <i class='bx bx-link-external'></i></a>
+                                </div>
+                            </div>
+
+                            <div class="cert-card">
+                                <div class="cert-img">
+                                    <img src="img/cert/RWD_Cert.png" alt="Responsive Web Design">
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Responsive Web Design</h4>
+                                    <p>freeCodeCamp | 2023</p>
+                                    <a href="#" class="view-cert">View Credential <i class='bx bx-link-external'></i></a>
+                                </div>
+                            </div>
+
+                            <div class="cert-card">
+                                <div class="cert-img">
+                                    <img src="" alt="Kotlin Android App Development:">
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Kotlin Android App Development:</h4>
+                                    <p>Udemy | 2025</p>
+                                    <a href="#" class="view-cert">View Credential <i class='bx bx-link-external'></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="skills" id="Skills">
-            <div class="lang">
+        </section>
+
+        <section class="section alt-bg" id="Skills">
+            <div class="section-title">
+                <h2>My Skills</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="skills-layout">
                 
+                <h3 class="skill-category-title">Frontend Web</h3>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <i class='bx bxl-html5'></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class='bx bxl-css3'></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class='bx bxl-javascript'></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class='bx bxl-react'></i>
+                        <span>React</span>
+                    </div>
+                </div>
+
+                <h3 class="skill-category-title">Mobile Development</h3>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin Logo">
+                        <span>Kotlin</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class='bx bxl-android'></i>
+                        <span>Jetpack Compose</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class='bx bxl-java'></i>
+                        <span>Java</span>
+                    </div>
+                </div>
+
+                <h3 class="skill-category-title">Core & Backend</h3>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <i class='bx bxl-python'></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class='bx bx-code-curly'></i>
+                        <span>C Language</span>
+                    </div>
+                </div>
+
+                <h3 class="skill-category-title">Tools</h3>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <i class='bx bxl-github'></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class='bx bxl-visual-studio'></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="skill-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio Logo">
+                        <span>Android Studio</span>
+                    </div>
+                </div>
+
             </div>
-            <div class="tech">
-                
+        </section>
+
+        <section class="section" id="Works">
+            <div class="section-title">
+                <h2>Selected Works</h2>
+                <div class="underline"></div>
             </div>
-        </div>
-        <div class="card-container" id="Works">
-            <div class="card">
-                <img src="img/card 1.png" alt=""> <!--Add another transistion-->
-                <div class="card-content">
-                    <h3>Card1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    <a href="" class="btn">Visit Now</a>
+
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img">
+                        <div class="placeholder-img"></div> 
+                        </div>
+                    <div class="card-content">
+                        <h3>Portfolio Website</h3>
+                        <p>A responsive portfolio website built with HTML, CSS, and JavaScript featuring dark mode.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="#" class="btn-sm">Demo</a>
+                            <a href="#" class="btn-sm outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <div class="placeholder-img"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>E-Commerce Dashboard</h3>
+                        <p>An admin dashboard interface for tracking sales and managing inventory.</p>
+                        <div class="tech-stack">
+                            <span>React</span><span>Node</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="#" class="btn-sm">Demo</a>
+                            <a href="#" class="btn-sm outline">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <div class="placeholder-img"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Task Manager App</h3>
+                        <p>A productivity tool to manage daily tasks with local storage integration.</p>
+                        <div class="tech-stack">
+                            <span>Vue.js</span><span>Firebase</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="#" class="btn-sm">Demo</a>
+                            <a href="#" class="btn-sm outline">Code</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="img/card 2.png" alt="">
-                <div class="card-content">
-                    <h3>Card2</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    <a href="" class="btn">Visit Now</a>
-                </div>
+        </section>
+
+        <section class="section contact-section" id="Contact">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
             </div>
-            <div class="card">
-                <img src="img/card 3.png" alt="">
-                <div class="card-content">
-                    <h3>Card3</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    <a href="" class="btn">Visit Now</a>
-                </div>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto; color: var(--text-secondary);">
+                Currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            </p>
+            <div class="contact-container">
+                <a href="mailto:email@example.com" class="btn primary-btn big-btn">Say Hello</a>
             </div>
-            <div class="card">
-                <img src="img/card 4.png" alt="">
-                <div class="card-content">
-                    <h3>Card4</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    <a href="" class="btn">Visit Now</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/card 5.png" alt="">
-                <div class="card-content">
-                    <h3>Card5</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    <a href="" class="btn">Visit Now</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/card 6.png" alt="">
-                <div class="card-content">
-                    <h3>Card6</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    <a href="" class="btn">Visit Now</a>
-                </div>
-            </div>
-            <div class="card">
-                <img src="img/card 7.png" alt="">
-                <div class="card-content">
-                    <h3>Card7</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    <a href="" class="btn">Visit Now</a>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
+
     <footer>
-        <div class="socials">
-            <p>fb</p>
-            <p>ig</p>
-        </div>
-        <div class="copyright">
-
-        </div>
-        <div class="contact">
-
+        <div class="footer-content">
+            <p>Designed & Built by Jennelle Salva</p>
+            <div class="socials">
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-github' ></i></a>
+            </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-

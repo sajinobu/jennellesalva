@@ -1,262 +1,561 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+/* --- 1. CSS Variables & Theme Setup --- */
+:root {
+    /* Fonts */
+    --font-main: "Poppins", sans-serif;
+
+    /* Light Mode Palette (Default) */
+    --bg-primary: #F5EAEA;
+    --bg-card: #FFFFFF;
+    --bg-input: #FFFFFF;
+    --text-primary: #4D4646;
+    --text-secondary: #686D76;
+    --text-muted: rgba(104, 109, 118, 0.75);
+    
+    --accent: #74B985;
+    --accent-hover: #68A87A;
+    --accent-text: #FFFFFF; /* Text on top of accent buttons */
+    
+    --divider: #E8E0E0;
+    --border-subtle: rgba(104, 109, 118, 0.15);
+    
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+    /* Dark Mode Palette */
+    --bg-primary: #2B2B2B; /* Derived from #4D4646 */
+    --bg-card: #383838;
+    --bg-input: #383838;
+    
+    --text-primary: #F5EAEA;
+    --text-secondary: #D3CFCF;
+    --text-muted: rgba(245, 234, 234, 0.6);
+    
+    /* Accent remains the same, consistent brand identity */
+    --accent: #74B985;
+    --accent-hover: #68A87A;
+    --accent-text: #2B2B2B; /* Dark text for contrast on green button */
+    
+    --divider: #444444;
+    --border-subtle: rgba(245, 234, 234, 0.08);
+    
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 2. Global Resets --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    color: #00FF90;
+    font-family: var(--font-main);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
-    background-color: #2E2E2E;
-    align-items: center;
-    width: 100%;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- 3. Header --- */
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    left: 0;
-    z-index: 99;
-    background-color: #2e2e2e3a;
-    backdrop-filter: blur(15px);
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--bg-primary); /* Or use a semi-transparent variable if preferred */
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 header .contents {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 15px 0;
 }
 
-header .logo {
-    margin-right: auto;
-}
-
-header .logo i {
-    font-size: 50px;
-}
-
-header .pages {
-    text-align: center;
-}
-
-header ul {
-    list-style: none;
-    padding: 0;
-}
-
-header li {
-    display: inline-block;
-    margin: auto 20px;
-    
-}
-
-header li a {
-    text-decoration: none;
-}
-
-header li a:hover {
-    text-decoration: underline;
-}
-
-header .mode {
-    margin-left: auto;
-}
-
-header .dark,
-.light {
-    cursor: pointer;
-}
-
-header .dark i,
-.light i {
+.logo a {
     font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
 }
 
-header .dark i:hover{
-    color: #41B06E;
-}
-
-header .dark {
-    display: none;
-}
-
-.home {
-    width: 80%;
-    margin: 0 auto;
+.pages ul {
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
+}
+
+.pages a {
+    font-size: 15px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.pages a:hover, .pages a.active {
+    color: var(--accent);
+}
+
+.mode-toggle {
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--text-primary);
+    padding: 5px;
+}
+
+.mode-toggle:hover {
+    color: var(--accent);
+}
+
+/* --- 4. Layout & Typography --- */
+section {
+    padding: 80px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: var(--text-primary);
+}
+
+.section-title .underline {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- 5. Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: transform 0.2s ease, background 0.2s;
+}
+
+.primary-btn {
+    background-color: var(--accent);
+    color: var(--accent-text);
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid var(--text-secondary);
+    color: var(--text-primary);
+    margin-left: 10px;
+}
+
+.secondary-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* --- 6. Home / Hero --- */
+.home {
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
     align-items: center;
-    padding: 70px;
+    justify-content: space-between;
+    padding-top: 80px; /* Offset for fixed header */
 }
 
 .home .text {
+    flex: 1;
+}
+
+.home .greeting {
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.home h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.home .subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.social-links {
+    margin-bottom: 40px;
+}
+
+.social-links a {
+    font-size: 24px;
+    color: var(--text-secondary);
     margin-right: 20px;
+    transition: 0.2s;
 }
 
-.home .text h1 {
-    font-size: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.home .text h1 .arrow {
-    color: #F86663;
-    margin-right: 13px;
-}
-
-.home .text .my-links {
-    display: flex;
-    margin: auto;
-    align-items: center;
-}
-
-.home .text .my-links .btn {
+.social-links a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
     display: inline-block;
-    color: #2E2E2E;
-    padding: 10px;
-    text-decoration: none;
-    background-color: #00FF90;
-    border-radius: 12px;
-    text-align: center;
-    margin-right: 15px;
-    transition: 0.2s ease;
 }
 
-.home .text .my-links .btn:hover {
-    transform: scale(1.1);
-}
-
-.home .text .my-links a i {
-    font-size: 40px;
-    padding: 5px;
-    color: #F86663;
-    transition: 0.2s ease;
-}
-
-.home .text .my-links a i:hover {
-    transform: scale(1.15);
-}
-
-.home .img img{
-    height: 500px;
-    width: auto;
-}
-
-.about {
-    width: 80%;
-    margin: 100px auto;
-    justify-content: center;
-    align-items: center;
-    padding: 70px;
-}
-
-.about h2 {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.about-content {
+.hero-img {
+    flex: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.about-content .photo {
-    margin: auto 50px;
-    
+.img-box {
+    width: 350px;
+    height: 350px;
+    background-color: var(--border-subtle);
+    border-radius: 50%; /* Circle shape */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.tint {
-    margin: 0;
-    padding: 0;
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- 7. About & Certifications --- */
+/* --- Certifications Visual Grid --- */
+.certifications-container {
+    margin-top: 60px;
+    width: 100%;
+}
+
+.certifications-container h3 {
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    font-size: 24px;
+    text-align: center; /* Center the title */
+}
+
+.cert-grid {
+    display: grid;
+    /* This creates a responsive grid that fits as many as possible */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 20px;
+}
+
+.cert-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.cert-img {
+    width: 100%;
+    height: 140px; /* Fixed height to keep them uniform */
+    background-color: var(--border-subtle);
+    overflow: hidden;
     position: relative;
 }
 
-.tint img {
-    width: 300px;
-    height: auto;
-    display: block;
-    border-radius: 20px;
-}
-
-.tint::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+.cert-img img {
     width: 100%;
     height: 100%;
-    background-color: #00ff9157;
-    transition: background-color 0.5s ease;
-    border-radius: 20px;
+    object-fit: cover; /* Ensures image covers area without stretching */
+    opacity: 0.9;
+    transition: opacity 0.3s;
 }
 
-.tint:hover::before {
-    background-color: #ffffff00;
+.cert-card:hover .cert-img img {
+    opacity: 1;
 }
 
-.about-content .about-me-text {
-    margin: auto 50px;
+.cert-info {
+    padding: 15px;
+    text-align: left;
 }
 
-.card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 80%;
-    margin: 80px auto;
-    align-items: center;
+.cert-info h4 {
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+    line-height: 1.3;
 }
 
-.card {
-    width: 350px;
-    background-color: #FEF4DF;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 20px;
-}
-
-.card img {
-    width: 350px;
-    height: auto;
-}
-
-.card-content {
-    padding: 15px 20px;
-}
-
-.card-content h3 {
-    font-size: 25px;
+.cert-info p {
+    font-size: 13px;
+    color: var(--text-secondary);
     margin-bottom: 12px;
 }
 
-.card-content p {
-    font-size: 15px;
-    margin-bottom: 12px;
-}
-
-.card-content h3,
-.card-content p {
-    color: #051944;
-}
-
-.card-content a {
+.view-cert {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
     text-decoration: none;
-    background-color: #051944;
-    border-radius: 12px;
-    line-height: 35px;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.view-cert:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* Dark mode adjustment purely for images if they are white screenshots */
+[data-theme="dark"] .cert-img img {
+    filter: brightness(0.9); /* Slightly dim bright certificates in dark mode */
+}
+
+/* --- 8. Skills --- */
+/* --- Skills Section Styles --- */
+
+/* 1. Category Titles */
+.skill-category-title {
+    font-size: 1.2rem;
+    
+    /* ADAPTS: Uses your main text color (Dark Grey in Light mode, White in Dark mode) */
+    color: var(--text-primary); 
+    
+    margin: 2rem 0 1rem 0;
     text-align: center;
 }
 
-.card-content a:hover {
-    background-color: #36EBB0;
-    color: #051944;
+/* 2. Container */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto 2rem auto;
+}
+
+/* 3. The Skill Card */
+.skill-card {
+    width: 140px; 
+    
+    /* ADAPTS: Uses your card background (White in Light mode, Dark Grey in Dark mode) */
+    background: var(--bg-card); 
+    
+    /* ADAPTS: Uses your subtle border variable */
+    border: 1px solid var(--border-subtle);
+    
+    /* ADAPTS: Text color matches the theme */
+    color: var(--text-primary);
+    
+    /* ADAPTS: Uses your shadow variable */
+    box-shadow: var(--shadow);
+    
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 4. Icons (Font-based like generic HTML/CSS icons) */
+.skill-card i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    
+    /* ADAPTS: Inherits the text color so icons are dark in light mode, light in dark mode */
+    color: var(--text-primary);
+}
+
+/* 5. Images (Kotlin / Android Studio) */
+.skill-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+    /* No filter needed; keeping original brand colors looks best */
+    filter: grayscale(100%) brightness(200%);
+}
+
+/* 6. Hover Effect */
+.skill-card:hover {
+    /* ADAPTS: Uses your accent color for the border on hover */
+    border-color: var(--accent);
+    
+    transform: translateY(-5px);
+    
+    /* Optional: Make shadow slightly stronger on hover */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15); 
+}
+
+/* --- 9. Projects (Cards) --- */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: var(--shadow);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img {
+    height: 200px;
+    background-color: var(--border-subtle);
+    width: 100%;
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd; /* simple grey block if no image */
+    opacity: 0.1;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.card-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.tech-stack {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-stack span {
+    font-size: 12px;
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.card-links {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-sm {
+    font-size: 13px;
+    padding: 8px 16px;
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn-sm.outline {
+    background-color: transparent;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+}
+
+.btn-sm:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-text);
+}
+
+/* --- 10. Footer --- */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .home .text h1 {
+        font-size: 36px;
+    }
+    
+    .social-links {
+        justify-content: center;
+        display: flex;
+    }
+
+    .pages {
+        display: none; /* In a real project, add a hamburger menu here */
+    }
 }
