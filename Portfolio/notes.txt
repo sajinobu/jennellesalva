@@ -38,3 +38,102 @@ https://www.aayush65.com/
 https://yuta-abe.com/
 https://www.yeahimjt.me/
 
+Palette:
+
+Dark Neutral ............ #4D4646  
+Medium Cool Neutral ...... #686D76  
+Muted Accent Green ....... #74B985  
+Soft Off-White ........... #F5EAEA  
+Pure Black (utility) ..... #000000  
+Pure White (utility) ..... #FFFFFF  
+
+
+
+LIGHT MODE COLOR ROLES
+
+Backgrounds
+ - Primary Background: #F5EAEA
+ - Card / Surface Background: #FFFFFF
+ - Section Dividers: #E8E0E0 (slightly darker derived from background)
+
+
+
+Text
+ - Primary Text: #4D4646
+ - Secondary Text / Paragraphs: #686D76
+ - Muted Text / Captions: rgba(104,109,118,0.75)
+
+
+
+Interactive
+ - Primary Button Background: #74B985
+ - Primary Button Text: #FFFFFF
+ - Link Text: #74B985
+ - Hover Accent: darker version → #68A87A
+
+
+
+UI Elements
+ - Card Borders: rgba(104,109,118,0.15)
+ - Input Fields / Containers: #FFFFFF (border using neutral)
+ - Icons: #4D4646 or #686D76 depending on emphasis
+
+
+
+DARK MODE COLOR ROLES
+ - To keep dark mode elegant and consistent with your muted palette, we invert the logic but retain the same accent behavior.
+
+
+
+Backgrounds
+ - Primary Background: #2B2B2B (derived tone from #4D4646)
+ - Card / Surface Background: #383838
+ - Section Dividers: #444444
+
+
+
+Text
+ - Primary Text: #F5EAEA
+ - Secondary Text: #D3CFCF (soft neutral derived from #F5EAEA)
+ - Muted Text: rgba(245,234,234,0.6)
+
+
+
+Interactive
+ - Primary Button Background: #74B985
+ - Primary Button Text: #2B2B2B (dark mode version of “neutral”)
+ - Link Text: #74B985
+ - Hover Accent: #68A87A
+
+
+
+UI Elements
+ - Card Borders: rgba(245,234,234,0.08)
+ - Input Background: #383838
+ - Input Border: rgba(245,234,234,0.2)
+ - Icons: #F5EAEA or #D3CFCF
+
+
+
+Consistency Rules to Make Both Modes Look Professional
+
+1. Keep the accent identical in both modes
+- The green (#74B985) acts as brand identity
+- Don’t darken it in dark mode; only hover state should change.
+
+
+
+2. Let neutrals control the theme shift
+- Light mode uses soft warmth (#F5EAEA)
+- Dark mode uses deep desaturated gray inspired by #4D4646
+
+
+
+3. Keep text contrast WCAG-friendly
+- Dark mode = light text on dark surfaces
+- Light mode = dark text on pale surfaces
+
+
+
+4. Make borders extremely subtle
+- Too-strong borders make muted palettes feel heavy.
