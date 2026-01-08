@@ -2,7 +2,6 @@ const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 const htmlElement = document.documentElement;
 
-// Check local storage for theme preference
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     htmlElement.setAttribute('data-theme', savedTheme);
@@ -10,17 +9,13 @@ if (savedTheme) {
 }
 
 themeToggle.addEventListener('click', () => {
-    // Get current theme
     const currentTheme = htmlElement.getAttribute('data-theme');
     
-    // Switch theme
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     htmlElement.setAttribute('data-theme', newTheme);
     
-    // Save to local storage
     localStorage.setItem('theme', newTheme);
     
-    // Update Icon
     updateIcon(newTheme);
 });
 
